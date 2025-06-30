@@ -1,21 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Input from '../components/Input'
 import InputButton from '../components/InputButton'
-import { useUrl } from '../context/UrlContext.jsx'
 import { useNavigate } from 'react-router-dom'
-const Zip = ({ longUrl }) => {
-  const { shortUrl } = useUrl()
+const Zip = ({ shortUrl,longUrl }) => {
   const [copied, setCopied] = useState(false)
   const [loading, setLoading] = useState(false)
-  const [checking, setChecking] = useState(true)
   const navigate = useNavigate()
-
-  useEffect(() => {
-   const timeout = setTimeout(() => {
-      if (!shortUrl) navigate('/');
-      setChecking(false);
-    }, 200); 
-  }, [shortUrl, navigate])
 
   const clickableShortUrl = shortUrl ? `${import.meta.env.VITE_BACKEND_API_URL}/url/${shortUrl}` : ''
 

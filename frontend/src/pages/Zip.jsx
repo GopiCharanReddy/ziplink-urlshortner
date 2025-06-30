@@ -7,12 +7,14 @@ const Zip = ({ longUrl }) => {
   const { shortUrl } = useUrl()
   const [copied, setCopied] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [checking, setChecking] = useState(true)
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (!shortUrl) {
-      navigate('/')
-    }
+   const timeout = setTimeout(() => {
+      if (!shortUrl) navigate('/');
+      setChecking(false);
+    }, 200); 
   }, [shortUrl, navigate])
 
   const clickableShortUrl = shortUrl ? `${import.meta.env.VITE_BACKEND_API_URL}/url/${shortUrl}` : ''
@@ -51,7 +53,7 @@ const Zip = ({ longUrl }) => {
           <div className='grid gap-y-4 mb-5'>
             <div className='text-3xl font-bold'>Your shortened URL</div>
             <div>Copy the short link and share it.</div>
-            <Input type={'text'} onChange={(e) => setLink(e.target.value)} placeholder={'Enter the link here'} readOnly label={''} value={clickableShortUrl} />
+            <Input type={'text'} onChange={() => {}} placeholder={'Enter the link here'} readOnly label={''} value={clickableShortUrl} />
             <InputButton onClick={handleCopy} type={'button'} disabled={loading} isLoading={loading} loadingText={loading ? 'Copy Link' : 'Link Copied.'} text={copied ? 'Copied!' : 'Copy Link'} />
           </div>
         </form>

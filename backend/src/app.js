@@ -15,6 +15,10 @@ app.use(
     origin: process.env.CORS_ORIGIN,
   })
 );
+console.log("-----------------------------------------");
+console.log("Backend Init: CORS_ORIGIN is:", process.env.CORS_ORIGIN);
+console.log("-----------------------------------------");
+
 const limiter = rateLimit({
   windowMs: 60 * 60 * 1000,
   limit: 100,

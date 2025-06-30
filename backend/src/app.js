@@ -27,8 +27,8 @@ app.use(express.urlencoded({ limit: "15kb" }));
 app.use(express.static("public"));
 app.use(cookieParser());
 app.use(limiter)
-app.use("/api/v1/user", userRoute);
-app.use("/api/v1/url", urlRoute);
+app.use("user", userRoute);
+app.use("url", urlRoute);
 
 app.use((err, req, res, next) => {
   console.error(err);

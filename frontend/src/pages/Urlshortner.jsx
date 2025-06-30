@@ -64,7 +64,7 @@ const Urlshortner = () => {
     <div className='static min-h-screen flex justify-center items-center bg-black'>
       <div>
         <div className='text-5xl font-bold text-center mb-8 text-white'>ZipLink</div>
-        {shortener ? <div>
+        {shortener && shortUrl ? <div>
           <Zip longUrl={link} shortUrl={shortUrl} />
           <Analytics shortUrl={shortUrl} />
         </div> :

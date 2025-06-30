@@ -6,7 +6,6 @@ const Zip = ({ shortUrl,longUrl }) => {
   const [copied, setCopied] = useState(false)
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
-
   const clickableShortUrl = shortUrl ? `${import.meta.env.VITE_BACKEND_API_URL}/url/${shortUrl}` : ''
 
   const handleCopy = async (e) => {

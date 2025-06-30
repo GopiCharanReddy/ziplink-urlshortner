@@ -1,24 +1,50 @@
-# Logs
-logs
-*.log
+# Dependencies
+/node_modules
+/dist
+
+# dotenv files
+# Local environment variables (sensitive)
+.env
+.env.development
+.env.local
+.env.*.local
+.env.development.local
+
+# Production environment variables (sensitive, handled by CI/CD)
+# If you commit .env.production to set default fallback values,
+# ensure no sensitive info is there.
+# If it contains sensitive info, uncomment the line below.
+.env.production
+
+# Log files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
-*.local
+.pnpm-debug.log*
+.yarn/cache
+.yarn/unplugged
 
 # Editor directories and files
+.idea
 .vscode/*
 !.vscode/extensions.json
-.idea
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
+*.vssscc
+.npm
+.eslintcache
+
+# macOS specific files
+.DS_Store
+
+# build output
+/build
+/dist
+/out
+/tmp
+
+# vite specific
+.vite/

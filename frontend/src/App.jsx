@@ -6,6 +6,8 @@ import UrlShortner from './pages/Urlshortner'
 import { UrlProvider } from './context/UrlContext'
 import { AuthProvider } from './context/AuthContext'
 import ProtectedRoute from './components/ProtectedRoute'
+import {Analytics} from '@vercel/analytics/react'
+
 const App = () => {
   return (
     <>
@@ -26,6 +28,7 @@ const App = () => {
           </UrlProvider>
         </AuthProvider>
       </BrowserRouter>
+      <Analytics />
     </>
   )
 }

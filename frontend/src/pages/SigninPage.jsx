@@ -44,7 +44,7 @@ const SigninPage = () => {
     }
   }
   return (
-    <div className='h-screen flex justify-center items-center bg-black text-white'>
+    <div className='min-h-screen flex justify-center items-center bg-black text-white'>
       <div className='grid gap-y-10'>
         <Header text={'Login and continue to start using Ziplink.'} heading={'Welcome to ZipLink'} />
         <form onSubmit={handleSubmit} className='grid gap-y-4 text-sm font-normal'>

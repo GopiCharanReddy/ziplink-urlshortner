@@ -22,7 +22,7 @@ const Zip = ({ longUrl }) => {
 
     if (!shortUrl) {
       return (
-        <div className='h-screen flex justify-center items-center bg-black text-white'>
+        <div className='min-h-screen flex justify-center items-center bg-black text-white'>
           <div className='text-center'>
             <p className='text-xl'>No short URL generated. Please go back to shorten a link.</p>
             <button onClick={() => navigate('/')} className='mt-4 px-6 py-2 bg-blue-600 rounded-md'>Go to Shortener</button>
